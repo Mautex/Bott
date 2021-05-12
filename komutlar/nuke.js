@@ -10,7 +10,7 @@ exports.run = async(client, message, args) => {
     const embed = new dc.MessageEmbed()
     .setTitle("Bu Kanal Nukelendi!")
     .setColor("ORANGE")
-    .setImage("https://tenor.com/view/explosion-boom-explode-gif-17383346")
+    .setImage("https://tenor.com/view/destory-eexplode-nuke-gif-6073338")
     z.send(embed)
     })
   };
