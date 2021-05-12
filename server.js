@@ -135,13 +135,13 @@ client.on("error", e => {
         db.delete(`afk_${message.author.id}`);
         db.delete(`afk_süre_${message.author.id}`);
     
-        const cowboy = new Discord.MessageEmbed()
+        const afk = new Discord.MessageEmbed()
     
           .setColor("RANDOM")
           .setAuthor(message.author.username, message.author.avatarURL)
           .setDescription(`Afk Modundan Başarıyla Çıkıldı!`);
     
-        message.channel.send(cowboy);
+        message.channel.send(afk);
       }
     
       var USER = message.mentions.users.first();
@@ -152,12 +152,12 @@ client.on("error", e => {
         let süre = await db.fetch(`afk_süre_${USER.id}`);
         let timeObj = ms(Date.now() - süre);
     
-        const cowboy = new Discord.MessageEmbed()
+        const afk = new Discord.MessageEmbed()
     
           .setColor("RANDOM")
           .setDescription(`**Bu Kullanıcı Afk**\n\n**Afk Olan Kullanıcı :** \`<@${USER.id}>\`\\n**Sebep :** \`${REASON}\``);
     
-        message.channel.send(cowboy);
+        message.channel.send(afk);
       }
     });
 //-------------------- Afk Sistemi Son --------------------//

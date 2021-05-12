@@ -32,7 +32,8 @@
     "can": "^6.6.0",
     "bad-words": "^3.0.3",
     "passport-google-oauth2": "^0.2.0",
-    "version": "^0.1.2"
+    "version": "^0.1.2",
+    "wio.db": "^4.0.20"
   },
   "engines": {
     "node": "12.x"

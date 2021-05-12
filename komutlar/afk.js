@@ -1,4 +1,4 @@
-const db = require("quick.db")
+const db = require("wio.db")
 const Discord = require("discord.js")
 const ayarlar = require('../ayarlar.json')
 let prefix= ayarlar.prefix
@@ -11,7 +11,7 @@ var REASON = args.slice(0).join(" ");
 const embed =new Discord.MessageEmbed()
 .setColor('RANDOM')
 .setAuthor(message.author.username, message.author.avatarURL)
-.setDescription(`Afk Olmak İçin Bir Sebeğ Belirtin. \n örnek Kullanım : ${prefix}afk <sebep>`)
+.setDescription(`Afk Olmak İçin Bir Sebep Belirtin. \n örnek Kullanım : ${prefix}afk <sebep>`)
 if(!REASON) return message.channel.send(embed)
 
 
