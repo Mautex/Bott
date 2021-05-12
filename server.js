@@ -1,88 +1,123 @@
+const Discord = require("discord.js");
+const client = new Discord.Client();
+const ayarlar = require("./ayarlar.json");
+const chalk = require("chalk");
+const moment = require("moment");
+var Jimp = require("jimp");
+const { Client, Util } = require("discord.js");
+const fs = require("fs");
+const db = require("quick.db");
+const http = require("http");
+const express = require("express");
+require("./util/eventLoader")(client);
 const path = require("path");
+const request = require("request");
 
-// Require the fastify framework and instantiate it
-const fastify = require("fastify")({
-  // set this to true for detailed logging:
-  logger: false
+
+const app = express();
+app.get("/", (request, response) => {
+  console.log(Date.now() + " Ping tamamdır.");
+  response.sendStatus(200);
+});
+app.listen(process.env.PORT);
+setInterval(() => {
+  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+}, 280000);
+
+var prefix = ayarlar.prefix;
+
+const log = message => {
+  console.log(`${message}`);
+};
+
+client.commands = new Discord.Collection();
+client.aliases = new Discord.Collection();
+fs.readdir("./komutlar/", (err, files) => {
+  if (err) console.error(err);
+  log(`${files.length} komut yüklenecek.`);
+  files.forEach(f => {
+    let props = require(`./komutlar/${f}`);
+    log(`Yüklenen komut: ${props.help.name}.`);
+    client.commands.set(props.help.name, props);
+    props.conf.aliases.forEach(alias => {
+      client.aliases.set(alias, props.help.name);
+    });
+  });
 });
 
-// Setup our static files
-fastify.register(require("fastify-static"), {
-  root: path.join(__dirname, "public"),
-  prefix: "/" // optional: default '/'
-});
-
-// fastify-formbody lets us parse incoming forms
-fastify.register(require("fastify-formbody"));
-
-// point-of-view is a templating manager for fastify
-fastify.register(require("point-of-view"), {
-  engine: {
-    handlebars: require("handlebars")
-  }
-});
-
-// load and parse SEO data
-const seo = require("./src/seo.json");
-if (seo.url === "glitch-default") {
-  seo.url = `https://${process.env.PROJECT_DOMAIN}.glitch.me`;
-}
-
-// Our home page route, this pulls from src/pages/index.hbs
-fastify.get("/", function(request, reply) {
-  // params is an object we'll pass to our handlebars template
-  let params = { seo: seo };
-  // check and see if someone asked for a random color
-  if (request.query.randomize) {
-    // we need to load our color data file, pick one at random, and add it to the params
-    const colors = require("./src/colors.json");
-    const allColors = Object.keys(colors);
-    let currentColor = allColors[(allColors.length * Math.random()) << 0];
-    params = {
-      color: colors[currentColor],
-      colorError: null,
-      seo: seo
-    };
-  }
-  reply.view("/src/pages/index.hbs", params);
-});
-
-// A POST route to handle and react to form submissions 
-fastify.post("/", function(request, reply) {
-  let params = { seo: seo };
-  // the request.body.color is posted with a form submission
-  let color = request.body.color;
-  // if it's not empty, let's try to find the color
-  if (color) {
-    // load our color data file
-    const colors = require("./src/colors.json");
-    // take our form submission, remove whitespace, and convert to lowercase
-    color = color.toLowerCase().replace(/\s/g, "");
-    // now we see if that color is a key in our colors object
-    if (colors[color]) {
-      // found one!
-      params = {
-        color: colors[color],
-        colorError: null,
-        seo: seo
-      };
-    } else {
-      // try again.
-      params = {
-        colorError: request.body.color,
-        seo: seo
-      };
+client.reload = command => {
+  return new Promise((resolve, reject) => {
+    try {
+      delete require.cache[require.resolve(`./komutlar/${command}`)];
+      let cmd = require(`./komutlar/${command}`);
+      client.commands.delete(command);
+      client.aliases.forEach((cmd, alias) => {
+        if (cmd === command) client.aliases.delete(alias);
+      });
+      client.commands.set(command, cmd);
+      cmd.conf.aliases.forEach(alias => {
+        client.aliases.set(alias, cmd.help.name);
+      });
+      resolve();
+    } catch (e) {
+      reject(e);
     }
+  });
+};
+
+client.load = command => {
+  return new Promise((resolve, reject) => {
+    try {
+      let cmd = require(`./komutlar/${command}`);
+      client.commands.set(command, cmd);
+      cmd.conf.aliases.forEach(alias => {
+        client.aliases.set(alias, cmd.help.name);
+      });
+      resolve();
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
+client.unload = command => {
+  return new Promise((resolve, reject) => {
+    try {
+      delete require.cache[require.resolve(`./komutlar/${command}`)];
+      let cmd = require(`./komutlar/${command}`);
+      client.commands.delete(command);
+      client.aliases.forEach((cmd, alias) => {
+        if (cmd === command) client.aliases.delete(alias);
+      });
+      resolve();
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
+client.elevation = message => {
+  if (!message.guild) {
+    return;
   }
-  reply.view("/src/pages/index.hbs", params);
+  let permlvl = 0;
+  if (message.member.hasPermission("BAN_MEMBERS")) permlvl = 2;
+  if (message.member.hasPermission("ADMINISTRATOR")) permlvl = 3;
+  if (message.author.id === ayarlar.sahip) permlvl = 4;
+  return permlvl;
+};
+
+var regToken = /[\w\d]{24}\.[\w\d]{6}\.[\w\d-_]{27}/g;
+// client.on('debug', e => {
+//   console.log(chalk.bgBlue.green(e.replace(regToken, 'that was redacted')));
+// });
+
+client.on("warn", e => {
+  console.log(chalk.bgYellow(e.replace(regToken, "that was redacted")));
 });
 
-// Run the server and report out to the logs
-fastify.listen(process.env.PORT, function(err, address) {
-  if (err) {
-    fastify.log.error(err);
-    process.exit(1);
-  }
-  console.log(`Your app is listening on ${address}`);
-  fastify.log.info(`server listening on ${address}`);
+client.on("error", e => {
+  console.log(chalk.bgRed(e.replace(regToken, "that was redacted")));
 });
+
+client.login(ayarlar.token);
