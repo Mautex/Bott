@@ -7,7 +7,7 @@ var prefix = ayarlar.prefix;
 
 module.exports = client => {
 var oyun = [
- 'DURUM 1',
+ 'Murat Eren#4841',
  'DURUM 2',
  'DURUM 3'
     ];
