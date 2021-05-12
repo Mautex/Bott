@@ -1,20 +1,23 @@
-const Discord = require ("discord.js");
-exports.run = (client, message) => {
-const Embed = new Discord.MessageEmbed()
-.setDesceription("Çalışıyom ab")
-.setFooter(client.user.username + "", client.user.avatarURL)
-.setTimestamp();
-return message.channel.send(Embed)
-.then; 
+const discord = require('discord.js')
+exports.run = function(client, message, args,params) {
+
+  if (args.length < 1) {
+    return message.reply('Çalışıyorum Ab')
+  }
+   
+message.channel.send("Çalışıyorum Ab")
 };
+
 exports.conf = {
-enabled: true, 
-    guildOnly: false, 
-    aliases: [], 
-    permLevel: 0 
+  aliases: [ ],
+  enabled: true,
+  guildOnly: false,
+  permLevel: 0
 };
-  exports.help = {
-    name: 'test', 
-    description: '', 
-    usage: 'test'
+
+exports.help = {
+  name: 'test',
+  description: 'test',
+  category: 'test',
+  usage: 'test',
 };

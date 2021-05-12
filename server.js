@@ -125,41 +125,5 @@ client.on("error", e => {
   console.log(chalk.bgRed(e.replace(regToken, "that was redacted")));
 });
 
-  //-------------------- Afk Sistemi --------------------//
-    client.on("message", async message => {
-      if (message.author.bot) return;
-      if (!message.guild) return;
-      if (message.content.includes(`afk`)) return;
-    
-      if (await db.fetch(`afk_${message.author.id}`)) {
-        db.delete(`afk_${message.author.id}`);
-        db.delete(`afk_süre_${message.author.id}`);
-    
-        const afk = new Discord.MessageEmbed()
-    
-          .setColor("RANDOM")
-          .setAuthor(message.author.username, message.author.avatarURL)
-          .setDescription(`Afk Modundan Başarıyla Çıkıldı!`);
-    
-        message.channel.send(afk);
-      }
-    
-      var USER = message.mentions.users.first();
-      if (!USER) return;
-      var REASON = await db.fetch(`afk_${USER.id}`);
-    
-      if (REASON) {
-        let süre = await db.fetch(`afk_süre_${USER.id}`);
-        let timeObj = ms(Date.now() - süre);
-    
-        const afk = new Discord.MessageEmbed()
-    
-          .setColor("RANDOM")
-          .setDescription(`**Bu Kullanıcı Afk**\n\n**Afk Olan Kullanıcı :** \`<@${USER.id}>\`\\n**Sebep :** \`${REASON}\``);
-    
-        message.channel.send(afk);
-      }
-    });
-//-------------------- Afk Sistemi Son --------------------//
 client.login(process.env.token);
 //TOKENİ ENVDEN ÇIKARMAYIN VE KİMSEYE PAYLAŞMAYIN ALTYAPIYI REMİXLEDİĞİNİZ ANDA SORUMLULUK SİZE AİTDİR.
