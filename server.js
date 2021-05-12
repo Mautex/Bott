@@ -16,7 +16,7 @@ const request = require("request");
 
 const app = express();
 app.get("/", (request, response) => {
-  console.log(Date.now() + " Ping tamamdır.");
+  console.log(Date.now() + " Pinglendi.");
   response.sendStatus(200);
 });
 app.listen(process.env.PORT);
@@ -108,7 +108,7 @@ client.elevation = message => {
   let permlvl = 0;
   if (message.member.hasPermission("BAN_MEMBERS")) permlvl = 2;
   if (message.member.hasPermission("ADMINISTRATOR")) permlvl = 3;
-  if (message.author.id === ayarlar.sahip) permlvl = 4;
+  if (message.author.id === ayarlar.sahip) permlvl = 8;
   return permlvl;
 };
 
@@ -125,4 +125,5 @@ client.on("error", e => {
   console.log(chalk.bgRed(e.replace(regToken, "that was redacted")));
 });
 
-client.login(ayarlar.token);
+client.login(process.env.token);
+//TOKENİ ENVDEN ÇIKARMAYIN VE KİMSEYE PAYLAŞMAYIN ALTYAPIYI REMİXLEDİ
