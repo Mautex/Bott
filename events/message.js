@@ -1,3 +1,4 @@
+const Discord = require("discord.js");
 const ayarlar = require('../ayarlar.json');
 let talkedRecently = new Set();
 module.exports = message => {
