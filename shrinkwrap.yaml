@@ -13,6 +13,7 @@ dependencies:
   level-session-store: 2.2.0
   moment: 2.29.1
   moment-duration-format: 2.3.2
+  node-superfetch: 0.2.3
   os: 0.1.1
   passport: 0.4.1
   passport-google-oauth2: 0.2.0
@@ -2498,6 +2499,16 @@ packages:
       node: '>= 0.12'
     resolution:
       integrity: sha512-1lLKB2Mu3aGP1Q/2eCOx0fNbRMe7XdwktwOruhfqqd0rIJWwN4Dh+E3hrPSlDCXnSR7UtZ1N38rVXm+6+MEhJQ==
+  /form-data/4.0.0:
+    dependencies:
+      asynckit: 0.4.0
+      combined-stream: 1.0.8
+      mime-types: 2.1.30
+    dev: false
+    engines:
+      node: '>= 6'
+    resolution:
+      integrity: sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==
   /forwarded/0.1.2:
     dev: false
     engines:
@@ -3045,6 +3056,15 @@ packages:
       node: 4.x || >=6.0.0
     resolution:
       integrity: sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
+  /node-superfetch/0.2.3:
+    dependencies:
+      form-data: 4.0.0
+      node-fetch: 2.6.1
+    dev: false
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-xOqifvw/3N+tIeeC80/TNJXkoxDZm8JWc7/0VBkJ86ttQTlJvoicuVaeJlKKHYRlmC2O6ygNIhNPwLYX4bxqdA==
   /noop-logger/0.1.1:
     dev: false
     resolution:
@@ -3986,6 +4006,7 @@ specifiers:
   level-session-store: ^2.2.0
   moment: ^2.29.1
   moment-duration-format: ^2.3.2
+  node-superfetch: ^0.2.3
   os: ^0.1.1
   passport: ^0.4.1
   passport-google-oauth2: ^0.2.0

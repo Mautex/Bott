@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 exports.run = (client, message, args) => {
 let embed = new Discord.MessageEmbed()
-.setDescription('HARCA HARCA BİTMEZ') 
+.setDescription('**HARCA HARCA BİTMEZ**') 
 message.channel.send(embed)
 };exports.conf = {
 enabled: true,

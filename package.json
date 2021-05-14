@@ -32,7 +32,8 @@
     "can": "^6.6.0",
     "bad-words": "^3.0.3",
     "passport-google-oauth2": "^0.2.0",
-    "version": "^0.1.2"
+    "version": "^0.1.2",
+    "node-superfetch": "^0.2.3"
   },
   "engines": {
     "node": "12.x"
