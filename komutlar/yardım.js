@@ -33,7 +33,17 @@ exports.run = (client, message) => {
 :white_small_square: | **!türk:** = türk gif atar
 :white_small_square: | **!a101:** = :D
 :white_small_square: | **!yavaşmod:** = belittiğiniz sayıda kanalı yavaşlatır
-:white_small_square: | **!a101:** = :D
+:white_small_square: | **!token:** = sana tokenimi veririm
+:white_small_square: | **!sunucubilgi:** = sunucuhakkında bilgi verir
+:white_small_square: | **!sil:** = belittiğiniz sayıda mesaj siler
+:white_small_square: | **!atatürk:** = o7
+:white_small_square: | **!avatar:** = avatarınızı gsterir
+:white_small_square: | **!botbilgi:** = botun bilgisini gösterir
+:white_small_square: | **!üyedurum:** = toplam üye sayısını göterir
+:white_small_square: | **!sunucuresmi:** = sunucunun resmini gösterir
+:white_small_square: | **!id:** = istediğiniz kişinin idsini verir
+:white_small_square: | **!kralol:** = kral olursun
+
 `)
 
 
