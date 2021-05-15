@@ -48,7 +48,10 @@ exports.run = (client, message) => {
 :white_small_square: | **!salak:** = salak gif atar :D
 :white_small_square: | **!korona :** = korona sayısını gösterir
 :white_small_square: | **!bansay:** = toplam ban sayısını gösterir
-
+:white_small_square: | **!yapımcım:** = yapımcımı gösterir
+:white_small_square: | **!aşkölçer:** = etiketleiğiniz kişiyle aşk derecenizi gösterir
+:white_small_square: | **!bug-bildir:** = botun yapımcısına bug bildirir
+:white_small_square: | **!mute:** = etiketlediğiniz kişiyi muteler
 `)
 
 
