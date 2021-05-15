@@ -56,7 +56,7 @@ exports.run = (client, message) => {
     .addField(
       ` :boom: Bilgilendirme`,
       `
-:white_small_square: | ** Bot Her Gün Güncelleniyor!**.
+:white_small_square: | **ot Her Gün Güncelleniyor!**.
 :white_small_square: | **Botu Ekleyerek Bize Destek Çıkmış Olursunuz.** `
     )
   
