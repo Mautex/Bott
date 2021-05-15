@@ -1,89 +1,71 @@
-const Discord = require("discord.js");
-exports.run = (client, message) => {
-const motionEmbed = new Discord.MessageEmbed()
+const Discord = require('discord.js');
+const db = require('quick.db');
 
-    .setAuthor(`${client.user.username} `, client.user.avatarURL)
-    .setColor("RED")
-    .setThumbnail(
-      "https://cdn.discordapp.com/attachments/790999702765961258/791775226186563635/6faf3b2ff385f75cc6b46e61e60c1979.gif"
-    )
-    .setDescription(
-      `Toplamda Botta **${client.commands.size}** Adet Komut Bulunuyor!` +
-        "\n\n `!botbilgi`= **Yazarak Botun İstatistiklerine Ulaşa Bilirsiniz.** \n `!davet`= **Yazarak Botun Davet Linkini Alırsınız. \n `!oyver`= Botumuza Oy verebilirsin**"
-    )
-    .addField(
-      `:boom:➤ Komutlar`,
-      `
- 
-:white_small_square: | **!test:** = botun çalıştığınız yada çalışmadığı söyler
-:white_small_square: | **!oylama:** = oyalma yaprsınız
-:white_small_square: | **!yaz:** = istediğiniz yazıyı yazar
-:white_small_square: | **!türk:** = türk gif atar
-:white_small_square: | **!toplamkomut:** = toplam komutu gösterir
-:white_small_square: | **!ping:** = botun pingini gösterir
-:white_small_square: | **!yazan-kazanır:** = verilen cümleyi ilk yazan kazanır
-:white_small_square: | **!nuke:** = yazılan kanala silip yeniden aynı şekilde kurur
-:white_small_square: | **!kick:** = etiketlediğiniz kişiyi sunucudan atar
-:white_small_square: | **!kapaklaflar:** = rastgele kapak laf söyler
-:white_small_square: | **!inek:** = inek gif atar
-:white_small_square: | **!espri:** = espri yapar
-:white_small_square: | **!ban:** = etiketlediğiniz kişiyi banlar
-:white_small_square: | **!ara155:** = polis gelir
-:white_small_square: | **!alkış:** = sizi alkışlar
-:white_small_square: | **!türk:** = türk gif atar
-:white_small_square: | **!a101:** = :D
-:white_small_square: | **!yavaşmod:** = belittiğiniz sayıda kanalı yavaşlatır
-:white_small_square: | **!token:** = sana tokenimi veririm
-:white_small_square: | **!sunucubilgi:** = sunucuhakkında bilgi verir
-:white_small_square: | **!sil:** = belittiğiniz sayıda mesaj siler
-:white_small_square: | **!atatürk:** = o7
-:white_small_square: | **!avatar:** = avatarınızı gsterir
-:white_small_square: | **!botbilgi:** = botun bilgisini gösterir
-:white_small_square: | **!üyedurum:** = toplam üye sayısını göterir
-:white_small_square: | **!sunucuresmi:** = sunucunun resmini gösterir
-:white_small_square: | **!id:** = istediğiniz kişinin idsini verir
-:white_small_square: | **!kralol:** = kral olursun
-:white_small_square: | **!kedi:** = kedi gif 
-:white_small_square: | **!oy:** = oy linkimi veiririm ( kodlardan ayarla oy linkini)
-:white_small_square: | **!salak:** = salak gif atar :D
-:white_small_square: | **!korona :** = korona sayısını gösterir
-:white_small_square: | **!bansay:** = toplam ban sayısını gösterir
-:white_small_square: | **!yapımcım:** = yapımcımı gösterir
-:white_small_square: | **!aşkölçer:** = etiketleiğiniz kişiyle aşk derecenizi gösterir
-:white_small_square: | **!bug-bildir:** = botun yapımcısına bug bildirir
-:white_small_square: | **!mute:** = etiketlediğiniz kişiyi muteler
+exports.run = async (client, message, args) => { 
+
+
+  let prefix = (await db.fetch(`prefix_${message.guild.id}`)) || "!";
+  const embed = new Discord.MessageEmbed()
+
+let yardım = new Discord.MessageEmbed()  
+.setColor('RANDOM')
+.addField('Murat-Eren Yardım Menüsü',`
+==============================================
+| **!test:** = botun çalıştığınız yada çalışmadığı söyler
+| **!oylama:** = oyalma yaprsınız
+| **!yaz:** = istediğiniz yazıyı yazar
+| **!türk:** = türk gif atar
+| **!toplamkomut:** = toplam komutu gösterir
+| **!ping:** = botun pingini gösterir
+| **!yazan-kazanır:** = verilen cümleyi ilk yazan kazanır
+| **!nuke:** = yazılan kanala silip yeniden aynı şekilde kurur
+| **!kick:** = etiketlediğiniz kişiyi sunucudan atar
+| **!kapaklaflar:** = rastgele kapak laf söyler
+| **!inek:** = inek gif atar
+| **!espri:** = espri yapar
+| **!ban:** = etiketlediğiniz kişiyi banlar
+| **!ara155:** = polis gelir
+| **!alkış:** = sizi alkışlar
+| **!türk:** = türk gif atar
+| **!a101:** = :D
+| **!yavaşmod:** = belittiğiniz sayıda kanalı yavaşlatır
+| **!token:** = sana tokenimi veririm
+| **!sunucubilgi:** = sunucuhakkında bilgi verir
+| **!sil:** = belittiğiniz sayıda mesaj siler
+| **!atatürk:** = o7
+| **!avatar:** = avatarınızı gsterir
+| **!botbilgi:** = botun bilgisini gösterir
+| **!üyedurum:** = toplam üye sayısını göterir
+| **!sunucuresmi:** = sunucunun resmini gösterir
+| **!id:** = istediğiniz kişinin idsini verir
+| **!kralol:** = kral olursun
+| **!kedi:** = kedi gif 
+| **!oy:** = oy linkimi veiririm ( kodlardan ayarla oy linkini)
+| **!salak:** = salak gif atar :D
+| **!korona :** = korona sayısını gösterir
+| **!bansay:** = toplam ban sayısını gösterir
+| **!yapımcım:** = yapımcımı gösterir
+| **!aşkölçer:** = etiketleiğiniz kişiyle aşk derecenizi gösterir
+| **!bug-bildir:** = botun yapımcısına bug bildirir
+| **!mute:** = etiketlediğiniz kişiyi muteler
+===============================================
 `)
-
-
-
-    .addField(
-      ` :boom: Bilgilendirme`,
-      `
-:white_small_square: | **ot Her Gün Güncelleniyor!**.
-:white_small_square: | **Botu Ekleyerek Bize Destek Çıkmış Olursunuz.** `
-    )
-  
-  .addField(
-      `**:boom:➤ Bağlantılar  **`,
-      `>  » [Destek Sunucusu](https://discord.gg/74MZyfZ24d) \n >  » [Botun Davet Linki](https://discord.com/api/oauth2/authorize?client_id=791609110658547782&permissions=8&scope=bot) \n > » [Oy Verebilirsiniz](https://top.gg/bot/791609110658547782/vote) `
-    )
-    .setFooter(
-      `
-${message.author.username} Tarafından İstendi.`,
-      message.author.avatarURL
-    );
-  return message.channel.send(motionEmbed);
-};
+  .addField("**» Davet Linki**", " [Botu Davet Et](https://discord.com/api/oauth2/authorize?client_id=787328444954050570&permissions=8&scope=bot)", )
+    .setImage("https://cdn.discordapp.com/attachments/821825276232728576/821831310213382264/standard.gif")
+.setFooter(`${message.author.tag} Tarafından İstendi.`, message.author.avatarURL())
+.setThumbnail(client.user.avatarURL())
+ message.channel.send(yardım) 
+  };
 
 exports.conf = {
   enabled: true,
-  guildOnly: true,
-  aliases: ["y"],
+  guildOnly: false,
+  aliases: ['help'],
   permLevel: 0
 };
 
 exports.help = {
   name: "yardım",
-  description: "yardım",
-  usage: "yardım"
+  category: "yardım",
+    description: "yardım"
 };
