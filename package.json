@@ -33,7 +33,8 @@
     "bad-words": "^3.0.3",
     "passport-google-oauth2": "^0.2.0",
     "version": "^0.1.2",
-    "node-superfetch": "^0.2.3"
+    "node-superfetch": "^0.2.3",
+    "snekfetch": "^4.0.4"
   },
   "engines": {
     "node": "12.x"

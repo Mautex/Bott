@@ -43,6 +43,11 @@ exports.run = (client, message) => {
 :white_small_square: | **!sunucuresmi:** = sunucunun resmini gösterir
 :white_small_square: | **!id:** = istediğiniz kişinin idsini verir
 :white_small_square: | **!kralol:** = kral olursun
+:white_small_square: | **!kedi:** = kedi gif 
+:white_small_square: | **!oy:** = oy linkimi veiririm ( kodlardan ayarla oy linkini)
+:white_small_square: | **!salak:** = salak gif atar :D
+:white_small_square: | **!korona :** = korona sayısını gösterir
+:white_small_square: | **!bansay:** = toplam ban sayısını gösterir
 
 `)
 
