@@ -78,12 +78,12 @@ ${message.author.username} Tarafından İstendi.`,
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: ["h"],
+  aliases: ["y"],
   permLevel: 0
 };
 
 exports.help = {
   name: "yardım",
-  description: ".",
+  description: "yardım",
   usage: "yardım"
 };
