@@ -23,7 +23,7 @@
     "discord-bots-api": "^0.0.2",
     "instagram-user": "^2.0.1",
     "passport": "^0.4.1",
-    "ytdl-core": "^4.7.0",
+    "ytdl-core": "^4.8.0",
     "weather-js": "^2.0.0",
     "google": "^2.1.0",
     "passport-oauth2": "^1.5.0",
