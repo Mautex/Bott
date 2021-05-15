@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 exports.run = (client, message) => {
-  const motionEmbed = new Discord.MessageEmbed()
+const motionEmbed = new Discord.MessageEmbed()
 
     .setAuthor(`${client.user.username} `, client.user.avatarURL)
     .setColor("RED")
