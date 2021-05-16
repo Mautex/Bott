@@ -4003,7 +4003,7 @@ specifiers:
   chalk: ^4.1.1
   db: ^3.3.1
   discord-bots-api: ^0.0.2
-  discord.js: ^12.5.3
+  discord.js: ^12.5.2
   express: ^4.17.1
   fs: ^0.0.2
   google: ^2.1.0
