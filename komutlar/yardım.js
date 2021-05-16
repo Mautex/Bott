@@ -16,7 +16,7 @@ exports.run = async (client, message, args) => {
   .setDescription(`
 
 ==============================================
-:hite_small_square: | **!test:** = botun çalıştığınız yada çalışmadığı söyler
+:white_small_square: | **!test:** = botun çalıştığınız yada çalışmadığı söyler
 :white_small_square: | **!oylama:** = oyalma yaprsınız
 :white_small_square: | **!yaz:** = istediğiniz yazıyı yazar
 :white_small_square: | **!türk:** = türk gif atar
