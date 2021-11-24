@@ -11,7 +11,7 @@ exports.run = async (client, message, args) => {
   .setTitle('Yardım Menüsüne Hoșgeldin')
   .setDescription(`
 
-prefixim : 
+prefixim : !
 
 🎯 | **a!eğlence:** = Eğlence komutlarını görüntersiniz.
 🌌 | **a!gif:** = Gif komutlarını görüntersiniz.
