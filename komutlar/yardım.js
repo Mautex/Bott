@@ -1,29 +1,20 @@
 const Discord = require('discord.js')
-
 const ayarlar = require('../ayarlar.json')
-
 let prefix = ayarlar.prefix
-
 exports.run = async (client, message, args) => { 
-
-
 
   const embed = new Discord.MessageEmbed()
 
 
 
-.setColor('RANDOM')
-
+.setColor('YELLOW')
   .setTitle('Yardım Menüsüne Hoșgeldin')
-
   .setDescription(`
 
-👋 Merhaba {user},
-prefixim : a!
+prefixim : 
 
 🎯 | **a!eğlence:** = Eğlence komutlarını görüntersiniz.
 🌌 | **a!gif:** = Gif komutlarını görüntersiniz.
-🎨 | **a!sunucu-tema:** = Sunucu Tema komutlarını görüntersiniz.
 🤖 | **a!bot:** = Botun ana komutlarını görüntersiniz.
 
 
