@@ -9,7 +9,7 @@ module.exports = client => {
 var oyun = [
  'P A N D A M ❤ Nazlı',
  '!yardım',
- 'A A❤'
+ 
     ];
 
     setInterval(function() {

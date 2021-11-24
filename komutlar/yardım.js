@@ -13,9 +13,9 @@ exports.run = async (client, message, args) => {
 
 prefixim : !
 
-🎯 | **a!eğlence:** = Eğlence komutlarını görüntersiniz.
-🌌 | **a!gif:** = Gif komutlarını görüntersiniz.
-🤖 | **a!bot:** = Botun ana komutlarını görüntersiniz.
+🎯 | **!eğlence:** = Eğlence komutlarını görüntersiniz.
+🌌 | **!gif:** = Gif komutlarını görüntersiniz.
+🤖 | **!bot:** = Botun ana komutlarını görüntersiniz.
 
 
 💥Bağlantılar 
