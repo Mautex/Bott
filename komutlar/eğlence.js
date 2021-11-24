@@ -24,6 +24,12 @@ exports.run = async (client, message, args) => {
 :white_small_square: | **!korona :** = korona sayısını gösterir.
 :white_small_square: | **!yapımcım:** = yapımcımı gösterir.
 :white_small_square: | **!aşkölçer:** = etiketleiğiniz kişiyle aşk derecenizi gösterir.
+:white_small_square: | **!espiri:** = espiri yaparsınız.
+:white_small_square: | **!kapaklaf:** = Bot kapaklaf söyler.
+:white_small_square: | **!türk:** = Bot türkiye gifi gösterir.
+:white_small_square: | **!ara155:** = 155'i arasınız.
+
+
 
 💥Bağlantılar 
 **» Davet Linki** [Botu Davet Et](https://discord.com/api/oauth2/authorize?client_id=832200119133667360&permissions=8&scope=bot)

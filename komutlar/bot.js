@@ -24,6 +24,8 @@ exports.run = async (client, message, args) => {
 :white_small_square: | **!nuke:** = Bot belirtiğiniz bir kanalı silip tekrar acar.
 :white_small_square: | **!kick:** = belirtiğiniz kișiyi sunucudan atar.
 :white_small_square: | **!bansay:** = sunucunuzda banlanan toplam sayıyı gösterir.
+:white_small_square: | **!ping:** = Botun pingini gösterir.
+
 
 
 
