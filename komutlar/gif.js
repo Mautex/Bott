@@ -13,11 +13,13 @@ exports.run = async (client, message, args) => {
 
 
 
-:white_small_square: | **!animal:** = botun çalıştığınız yada çalışmadığı söyler
-:white_small_square: | **!oylama:** = oyalma yaprsınız
-:white_small_square: | **!yaz:** = istediğiniz yazıyı yazar
-:white_small_square: | **!türk:** = türk gif atar
-:white_small_square: | **!toplamkomut:** = toplam komutu gösterir
+:white_small_square: | **!animal:** = Bot hayvan gif atar.
+:white_small_square: | **!anime:** = Bot anime  gif atar.
+:white_small_square: | **!baby:** = Bot bebek gif atar.
+:white_small_square: | **!man:** = Bot erkek gif atar.
+:white_small_square: | **!woman:** = Bot kadın gif atar.
+:white_small_square: | **!türk:** = Bot türk gif atar.
+
 
 
 
