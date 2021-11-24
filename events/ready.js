@@ -7,8 +7,8 @@ var prefix = ayarlar.prefix;
 
 module.exports = client => {
 var oyun = [
- 'Arda Akks🌙',
- 'Artilla❤',
+ 'P A N D A M ❤ Nazlı',
+ '!yardım',
  'A A❤'
     ];
 

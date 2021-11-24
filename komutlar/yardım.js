@@ -20,8 +20,7 @@ prefixim : !
 
 💥Bağlantılar 
 
-**» Davet Linki** [Botu Davet Et](https://discord.com/api/oauth2/authorize?client_id=832200119133667360&permissions=8&scope=bot)
-
+**» Botun Destek sunucusu** [Destek sunucusu](https://discord.gg/dBJ4TNYSgC)
 `)
 
  message.channel.send(embed) 
