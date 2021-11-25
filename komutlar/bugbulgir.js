@@ -9,9 +9,9 @@ let kanal = message.channel.name;
 let channel = bot.channels.cache.get(ayarlar.bugkanalid)//bug repot kanal id'i
 let embed = new Discord.MessageEmbed()
 .setTitle("Bug Report")
-.setThumbnail("https://cdn.discordapp.com/attachments/545569894268272650/645252657572872192/tosun.png?width=80&height=80")
+.setThumbnail(message.author.avatarURL())
 .addField("Bug", bug)
-.addField("Report Eden", user, true)
+.addField("Report Eden", message.author.tag, true)
 .addField("Sunucu", guild, true)
 .addField("Sunucu ID", guildid, true)
 .addField("Kanal", kanal, true)
