@@ -11,7 +11,7 @@ let embed = new Discord.MessageEmbed()
 .setTitle("Bug Report")
 .setThumbnail(message.author.avatarURL())
 .addField("Bug", bug)
-.addField(`[Report Eden](https://discord.com/users/${message.author.id)`, th
+.addField(`[Report Eden](https://discord.com/users/${message.author.id})`, false)
 .addField("Sunucu", guild, true)
 .addField("Sunucu ID", guildid, true)
 .addField("Kanal", kanal, true)
