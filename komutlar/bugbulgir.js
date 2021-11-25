@@ -1,11 +1,12 @@
 const Discord = require("discord.js");
+const ayarlar = require("../ayarlar.json")
 module.exports.run = async (bot, message, args) => {
 let bug = args.join(" ").slice(0);
 let user = message.author.username;
 let guild = message.guild.name;
 let guildid = message.guild.id;
 let kanal = message.channel.name;
-let channel = bot.channels.cache.get("780654895250276353")//bug repot kanal id'i
+let channel = bot.channels.cache.get(ayarlar.bugkanalid)//bug repot kanal id'i
 let embed = new Discord.MessageEmbed()
 .setTitle("Bug Report")
 .setThumbnail("https://cdn.discordapp.com/attachments/545569894268272650/645252657572872192/tosun.png?width=80&height=80")
