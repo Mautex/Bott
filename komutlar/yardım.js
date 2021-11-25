@@ -8,10 +8,10 @@ exports.run = async (client, message, args) => {
 
 
 .setColor('YELLOW')
-  .setTitle('Yardım Menüsüne Hoșgeldin')
+  .setTitle(ayarlar.botisim + ' Yardım Menüsüne Hoșgeldin 👋')
   .setDescription(`
 
-prefixim : !
+🔨 | Prefixim : !
 
 🎯 | **!eğlence:** = Eğlence komutlarını görüntersiniz.
 🌌 | **!gif:** = Gif komutlarını görüntersiniz.
