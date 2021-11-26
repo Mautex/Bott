@@ -16,10 +16,10 @@ const request = require("request");
 const app = express();
 const port = 3000;
 
-app.get('/', (req, res) => res.send("${ayarlar.botisim}"));
+app.get("./index.html", (req, res) => res.send(index.html));
 
 app.listen(port, () =>
-    console.log(`Port Açıldı! ${port}`)
+    console.log("Port Açıldı! ${port}")
 );
 
 
