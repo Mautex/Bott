@@ -11,10 +11,12 @@ exports.run = async (client, message, args) => {
   .setTitle(ayarlar.botisim + ' Yardım Menüsüne Hoșgeldin 👋')
   .setDescription(`
 
-🔨 | Prefixim : !
+🔨 | Prefixim : ${prefix}
 
 🎯 | **!eğlence:** = Eğlence komutlarını görüntersiniz.
+
 🌌 | **!gif:** = Gif komutlarını görüntersiniz.
+
 🤖 | **!bot:** = Botun ana komutlarını görüntersiniz.
 
 
@@ -22,6 +24,7 @@ exports.run = async (client, message, args) => {
 
 **» Botun Destek sunucusu** [Destek sunucusu](https://discord.gg/dBJ4TNYSgC)
 `)
+.setImage("https://media.discordapp.net/attachments/773998338999058453/790319445381873684/standard.gif")
 
  message.channel.send(embed) 
 
