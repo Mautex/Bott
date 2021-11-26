@@ -11,7 +11,9 @@
 Bu Bot Altyapısı YouTube Murat Eren'e aittir Badel96 Tarafından Düzenlenerek Size Sunulmuștur.
 
 
-
+## Kurulumlar
+[Discord Developer Portal](https://d)
+---
 
 YouTube : [Murat Eren](https://youtube.com/c/MuratErenn)
 
