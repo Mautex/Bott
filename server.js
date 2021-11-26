@@ -15,14 +15,14 @@ const request = require("request");
 
 
 const app = express();
-app.get("/", (request, response) => {
-  console.log(Date.now() + " Pinglendi.");
-  response.sendStatus(200);
-});
-app.listen(process.env.PORT);
-setInterval(() => {
-  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
-}, 280000);
+const port = 3000;
+
+app.get('/', (req, res) => res.send('Nays Uptime & FastUptime'));
+
+app.listen(port, () =>
+    console.log(`Port Açıldı! ${port}`)
+);
+
 
 var prefix = ayarlar.prefix;
 
