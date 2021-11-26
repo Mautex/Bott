@@ -13,11 +13,10 @@ require("./util/eventLoader")(client);
 const path = require("path");
 const request = require("request");
 
-
 const app = express();
 const port = 3000;
 
-app.get('/', (req, res) => res.send('Nays Uptime & FastUptime'));
+app.get('/', (req, res) => res.send("${ayarlar.botisim}"));
 
 app.listen(port, () =>
     console.log(`Port Açıldı! ${port}`)
