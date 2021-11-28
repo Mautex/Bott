@@ -1,11 +1,11 @@
 const Discord = require("discord.js");
 
 exports.run = (client, message, args) => {
-  const rexus = new Discord.MessageEmbed()
+  const mrt = new Discord.MessageEmbed()
     .setColor("#00ee00")
-    .setDescription("> Yapımcım : <@714471679153275011>")
-    .setFooter(" yapımcım ") ///İD nizi yukarı yazın🔝
-  message.channel.send(rexus);
+    .setDescription("> Yapımcım : <@725110280249540708>")
+    .setFooter(" yapımcım ") ///İd nizi yukarı tarafa yazın
+  message.channel.send(mrt);
 };
 
 exports.conf = {

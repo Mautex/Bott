@@ -14,7 +14,7 @@ enabled: true,
     permLevel: 0 
 };
   exports.help = {
-    name: 'toplam-komut', 
+    name: 'toplamkomut', 
     description: '', 
-    usage: 'toplam-komut'
+    usage: 'toplamkomut'
 };

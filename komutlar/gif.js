@@ -25,7 +25,7 @@ exports.run = async (client, message, args) => {
 
 💥Bağlantılar 
 
-**» Botun Destek sunucusu** [Destek sunucusu](https://discord.gg/dBJ4TNYSgC)
+**» Botun Destek sunucusu** [Destek sunucusu](https://discord.gg/erTqUNqSUd)
 
 `)
 
