@@ -29,7 +29,7 @@ module.exports.conf = {
 };
 
 module.exports.help = {
-  name: "sunucu-bilgi",
+  name: "sunucubilgi",
   description: "",
-  usage: "sunucu-bilgi"
+  usage: "sunucubilgi"
 };

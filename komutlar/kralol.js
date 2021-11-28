@@ -16,7 +16,7 @@ enabled: true,
     permLevel: 0 
 };
   exports.help = {
-    name: 'kral-ol', 
+    name: 'kralol', 
     description: 'kral ol', 
-    usage: 'kral-ol'
+    usage: 'kralol'
 };
