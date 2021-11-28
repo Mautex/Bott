@@ -17,7 +17,7 @@ exports.conf = {
   };
   
   exports.help = {
-    name: "ban-say",
+    name: "bansay",
     description: "Sunucudan banlanan kişilerin sayısını gösterir",
     usage: "bansay"
   }

@@ -28,6 +28,8 @@ exports.run = async (client, message, args) => {
 :white_small_square: | **!kapaklaf:** = Bot kapaklaf söyler.
 :white_small_square: | **!türk:** = Bot türkiye gifi gösterir.
 :white_small_square: | **!ara155:** = 155'i arasınız.
+:white_small_square: | **!yazankazanır:** = ilk yazan kazanır :D
+
 
 
 

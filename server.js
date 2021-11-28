@@ -100,6 +100,10 @@ client.unload = command => {
     });
 };
 
+client.on("message",message=>{
+    if(message.content==`<@!${client.user.id}>`) return message.channel.send(`Prefixim : **${prefix}**`);
+})
+
 client.elevation = message => {
   if (!message.guild) {
     return;

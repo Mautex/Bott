@@ -48,8 +48,8 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'yazan-kazanır',
+  name: 'yazankazanır',
   category: "eğlence",
   description: 'Botun verdiği kelimeyi ilk yazan kazanır oyunu!',
-  usage: 'yazan-kazanır [@kullanıcı]'
+  usage: 'yazankazanır [@kullanıcı]'
 };

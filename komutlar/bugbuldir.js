@@ -33,7 +33,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'bug-bildir',
+  name: 'bugbildir',
   description: 'Bug Bildirme Komudu.',
-  usage: 'bug-bildir'
+  usage: 'bugbildir'
 }
