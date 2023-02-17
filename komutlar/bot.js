@@ -27,10 +27,6 @@ exports.run = async (client, message, args) => {
 :white_small_square: | **!ping:** = Botun pingini gösterir.
 
 
-
-💥Bağlantılar 
-**» Botun Destek sunucusu** [Destek sunucusu](https://discord.gg/erTqUNqSUd)
-
 `)
 
 

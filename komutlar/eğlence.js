@@ -32,10 +32,6 @@ exports.run = async (client, message, args) => {
 :white_small_square: | **!yazankazanır:** = ilk yazan kazanır :D
 
 
-
-
-💥Bağlantılar 
-**» Botun Destek sunucusu** [Destek sunucusu](https://discord.gg/erTqUNqSUd)
 `)
 
  message.channel.send(embed) 
